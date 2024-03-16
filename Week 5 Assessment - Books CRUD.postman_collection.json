@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "4ca19917-4b7d-41f6-aacf-da418fff237f",
+		"name": "Week 5 Assessment - Books CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28103794"
+	},
+	"item": [
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/books/getAll"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/books/get/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Add new book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Da Vinci Code\",\r\n  \"author\": \"Dan Brown\",\r\n  \"price\": 14.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/books/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 11,\r\n  \"title\": \"The Da Da Da code\",\r\n  \"author\": \"Dan Dan Dan\",\r\n  \"price\": 1000.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/books/update"
+			},
+			"response": []
+		},
+		{
+			"name": "delete book by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/books/delete/11"
+			},
+			"response": []
+		}
+	]
+}
