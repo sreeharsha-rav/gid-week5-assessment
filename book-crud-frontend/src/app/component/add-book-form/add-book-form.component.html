@@ -1,0 +1,35 @@
+<!-- Show Modal Backdrop -->
+@if (addData.showAddForm) {
+  <div class="modal-backdrop fade show"></div>
+}
+<!-- Add Book Modal -->
+<div class="modal fade" id="addBookForm" tabindex="-1" aria-labelledby="addBookModal" aria-hidden="true" [ngClass]="{ 'show': addData.showAddForm, 'd-block': addData.showAddForm }">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addBookModalLabel">Add a Book</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="toggleAddForm()"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addForm">
+            <div class="mb-3">
+              <label for="title" class="form-label">Book Title</label>
+              <input type="text" formControlName="title" class="form-control" id="title" placeholder="Enter Book Title">
+            </div>
+            <div class="mb-3">
+              <label for="author" class="form-label">Author</label>
+              <input type="text" formControlName="author" class="form-control" id="author" placeholder="Enter Author">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="text" formControlName="price" class="form-control" id="price" placeholder="Enter Price">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="toggleAddForm()">Close</button>
+                <button type="submit" class="btn btn-primary" (click)="addNewBook()">Add Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>

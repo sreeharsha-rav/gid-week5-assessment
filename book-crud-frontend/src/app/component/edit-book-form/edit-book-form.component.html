@@ -1,0 +1,36 @@
+<!-- Show Modal Backdrop -->
+@if (editData.showEditForm) {
+  <div class="modal-backdrop fade show"></div>
+}
+<!-- Edit Book Modal -->
+<div class="modal fade" id="editBookForm" tabindex="-1" aria-labelledby="editBookModal" [ngClass]="{ 'show': editData.showEditForm, 'd-block': editData.showEditForm }" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editBookModalLabel">Edit Book</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="toggleEditForm()"></button>
+        </div>
+        <div class="modal-body">
+          <p><i>ID: {{editData.currentBook.id}}, Title: {{editData.currentBook.title}}, Author: {{editData.currentBook.author}}, Price: {{editData.currentBook.price}}</i></p>
+          <form [formGroup]="editForm">
+            <div class="mb-3">
+              <label for="title" class="form-label">Edit Book Title</label>
+              <input type="text" formControlName="title" class="form-control" id="title" placeholder="Enter Book Title">
+            </div>
+            <div class="mb-3">
+              <label for="author" class="form-label">Edit Author</label>
+              <input type="text" formControlName="author" class="form-control" id="author" placeholder="Enter Author">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Edit Price</label>
+              <input type="text" formControlName="price" class="form-control" id="price" placeholder="Enter Price">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="toggleEditForm()">Close</button>
+                <button type="submit" class="btn btn-primary" (click)="saveChangesToBook()">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
